@@ -10,7 +10,7 @@ namespace MenuShell.Views
             base.Display();
             Console.WriteLine("AdminView\n");
             Console.WriteLine("(1) Add User");
-            Console.WriteLine("(2) Delete User");
+            Console.WriteLine("(2) Search User");
             Console.WriteLine("(3) Log out");
             var input = Console.ReadKey();
 
@@ -20,7 +20,7 @@ namespace MenuShell.Views
                     MenuController.AdminAddUserStart();
                     break;
                 case ConsoleKey.D2:
-                    MenuController.AdminDeleteUserStart();
+                    MenuController.UserSearchViewStart();
                     break;
                 case ConsoleKey.D3:
                     MenuController.Start();

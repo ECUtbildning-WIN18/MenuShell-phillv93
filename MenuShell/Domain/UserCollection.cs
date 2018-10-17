@@ -4,9 +4,12 @@ namespace MenuShell.Domain
 {
     class UserCollection
     {
-        public List<User> Users = new List<User>()
+        public List<User> Users = new List<User>
         {
-            new User("admin", "secret", "administrator")
+            new User("admin", "password", "administrator") ,
+            new User("Jane", "password", "veterinarian"),
+            new User("Jake", "password", "veterinarian"),
+            new User("Jim", "password", "receptionist") 
         };
         
         public List<User> GetUsers()

@@ -34,6 +34,11 @@ namespace MenuShell.Views
                         {
                             MenuController.ReceptionistMenuStart();
                         }
+                        else if (user == null)
+                        {
+                            continue;
+                        }
+
                         break;
                     }
                     case ConsoleKey.N:
@@ -42,6 +47,7 @@ namespace MenuShell.Views
                         Console.WriteLine("invalid selection");
                         break;
                 }
+
                 break;
             }
         }

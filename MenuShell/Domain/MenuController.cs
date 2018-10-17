@@ -4,8 +4,6 @@ namespace MenuShell.Domain
 {
     class MenuController
     {
-        //private static bool _loggedIn;
-            
         public static void Start()
         {
             var loginView = new LoginView();
@@ -34,6 +32,12 @@ namespace MenuShell.Domain
         {
             var receptionistMainView = new ReceptionistMainView();
             receptionistMainView.Display();
+        }
+
+        public static void UserSearchViewStart()
+        {
+            var userSearchView = new UserSearchView();
+            userSearchView.Display();
         }
     }
 }
