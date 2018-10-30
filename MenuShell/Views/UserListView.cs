@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using MenuShell.Domain;
+using MenuShell.Services;
 
 namespace MenuShell.Views
 {
@@ -61,7 +62,8 @@ namespace MenuShell.Views
             var deleteUsername = FoundUsers.SingleOrDefault(r => r.UserName == username);
             if (deleteUsername != null)
             {
-                Program.userCollection.Remove(deleteUsername);
+                var deleteUserService = new DeleteUserService();
+                deleteUserService.DeleteUserFromDatabase(deleteUsername);
             }
             else
             {

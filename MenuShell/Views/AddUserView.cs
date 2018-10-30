@@ -1,5 +1,6 @@
 ﻿using System;
 using MenuShell.Domain;
+using MenuShell.Services;
 
 namespace MenuShell.Views
 {
@@ -15,7 +16,7 @@ namespace MenuShell.Views
                 string username = Console.ReadLine();
                 Console.Write("Password: ");
                 string password = Console.ReadLine();
-                Console.WriteLine("Role: (R)eceptionist or (A)dmin");
+                Console.WriteLine("Role: (V)eterinarian, (R)eceptionist or (A)dmin");
                 var input = Console.ReadKey(true);
                 string role = UserRole(input);
                 Console.WriteLine($"Role Chosen = {role}\n");
@@ -25,7 +26,9 @@ namespace MenuShell.Views
                 switch (input2.Key)
                 {
                     case ConsoleKey.Y:
-                        Program.userCollection.Add(new User(username, password, role));
+                        var user = new User(username, password, role);
+                        var AddUserService = new AddUserService();
+                        AddUserService.AddUserToDatabase(user);
                         MenuController.AdminMenuStart();
                         break;
                     case ConsoleKey.N:
@@ -46,6 +49,10 @@ namespace MenuShell.Views
         {
             switch (input.Key)
             {
+                case ConsoleKey.V:
+                {
+                    return "veterinarian";
+                }
                 case ConsoleKey.R:
                 {
                     return "receptionist";

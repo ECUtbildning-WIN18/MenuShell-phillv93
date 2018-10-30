@@ -28,6 +28,12 @@ namespace MenuShell.Domain
             deleteUserView.Display();
         }
 
+        public static void VeterinarianMenuStart()
+        {
+            var veterianarianMainView = new VeterinarianMainView();
+            veterianarianMainView.Display();
+        }
+
         public static void ReceptionistMenuStart()
         {
             var receptionistMainView = new ReceptionistMainView();

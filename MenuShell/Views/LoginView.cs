@@ -34,7 +34,11 @@ namespace MenuShell.Views
                         {
                             MenuController.ReceptionistMenuStart();
                         }
-                        else if (user == null)
+                        else if (user != null && user.Role == "veterinarian")
+                        {
+                            MenuController.VeterinarianMenuStart();
+                        }
+                            else if (user == null)
                         {
                             continue;
                         }
